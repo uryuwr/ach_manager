@@ -1,5 +1,6 @@
 package com.ch.module.achievement.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ch.common.config.MyException;
 import com.ch.common.config.MyWebSocket;
 import com.ch.common.entity.Items;
@@ -10,6 +11,8 @@ import com.ch.module.achievement.domain.AchInfo;
 import com.ch.module.achievement.domain.AchLevel;
 import com.ch.module.achievement.domain.Achievement;
 import com.ch.module.achievement.dto.AchievementDto;
+import com.ch.module.achievement.repository.AchDomainRepository;
+import com.ch.module.achievement.repository.AchLevelRepository;
 import com.ch.module.achievement.repository.AchievementRepository;
 import com.ch.module.achievement.service.AchDomainService;
 import com.ch.module.achievement.service.AchInfoService;
@@ -56,14 +59,40 @@ public class AchievementController {
     @Autowired
     private AchInfoService achInfoService;
 
+    @Autowired
+    private AchDomainRepository achDomainRepository;
+
+    @Autowired
+    private AchLevelRepository achLevelRepository;
+
     @GetMapping("/domains")
     public List<AchDomain> getDomains() {
         return achDomainService.findAll();
     }
 
+    @GetMapping("/domains/{id}")
+    public String getDomainById(@PathVariable Integer id) {
+        return JSONObject.toJSONString(achDomainService.findStrictOne(id));
+    }
+
+    @PutMapping("/domains")
+    public void saveDomain(@RequestBody AchDomain achDomain) {
+        achDomainRepository.save(achDomain);
+    }
+
+    @PutMapping("/levels")
+    public void saveLevel(@RequestBody AchLevel achLevel) {
+        achLevelRepository.save(achLevel);
+    }
+
     @GetMapping("/levels")
     public List<AchLevel> getLevels() {
         return achLevelService.findAll();
+    }
+
+    @GetMapping("/levels/{id}")
+    public String getLevelById(@PathVariable Integer id) {
+        return JSONObject.toJSONString(achLevelService.findStrictOne(id));
     }
 
     @PostMapping
