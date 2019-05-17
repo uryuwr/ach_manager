@@ -1,5 +1,6 @@
 package com.ch.utils;
 
+import com.ch.common.config.MyException;
 import org.springframework.util.ResourceUtils;
 
 import javax.servlet.http.HttpServletResponse;
@@ -51,6 +52,8 @@ public class FileUtils {
                     }
                 }
             }
+        } else {
+            throw new MyException("400","文件不存在！");
         }
     }
 }
