@@ -1,0 +1,46 @@
+ spring:
+    servlet:
+      multipart:
+        max-file-size: 3MB
+        max-request-size: 3MB
+    application:
+      name: dev-manager
+    datasource:
+      type:
+        com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/dev_manage?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+      username: root
+      password: root
+      initialSize: 3
+      minidle: 3
+      maxActive: 18
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 1 FROM dual
+      filters: stat,wall,log4j
+    jpa:
+      database: mysql
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+    mvc:
+      static-path-pattern: /**
+    resources:
+      static-locations: classpath:/static/
+
+    thymeleaf:
+      mode: HTML5
+      encoding: UTF-8
+      cache: false
+      servlet:
+        content-type: text/html
+      prefix: classpath:/templates/
+      suffix: .html
+
+#    data:
+#      mongodb:
+#        uri:
+#        username:
+#        password:
+

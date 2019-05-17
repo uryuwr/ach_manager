@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carbon - Admin Template</title>
+    <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/popper.js/popper.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/chart.js/chart.min.js"></script>
+    <script src="../js/carbon.js"></script>
+    <script src="../js/demo.js"></script>
+    <script src="../js/getUserInfo.js"></script>
+    <script type="text/javascript" src="../js/websocket.js"></script>
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <nav class="navbar page-header">
+        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <a class="navbar-brand" href="#">
+            <img src="../imgs/logo.png" alt="logo">
+        </a>
+
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-bell"></i>
+                    <span id="message" class="badge badge-pill badge-danger">0</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-envelope-open"></i>
+                    <span class="badge badge-pill badge-danger">5</span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img src="../imgs/avatar-1.png" class="avatar avatar-sm" alt="logo">
+                    <span id="user_name" class="small ml-1 d-md-down-none"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header">Account</div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-user"></i> Profile
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-envelope"></i> Messages
+                    </a>
+
+                    <div class="dropdown-header">Settings</div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-bell"></i> Notifications
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-wrench"></i> Settings
+                    </a>
+
+                    <a href="/v0.1/user/logout" onclick="logout()" class="dropdown-item">
+                        <i class="fa fa-lock"></i> Logout
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+
+                    <li class="nav-item">
+                        <a href="../blank.html" class="nav-link" data-value="主页">
+                            <i class="icon icon-speedometer"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-dropdown open">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-target"></i> 业绩管理 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-url="audit.html" data-value="待审核">
+                                    <span class="badge badge-pill badge-danger">0</span></i> 待审核
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-url="login.html" data-value="已审核">
+                                    <i class="icon icon-target"></i> 已审核
+                                </a>
+                            </li>
+
+                            <li class="nav-item" data-url="register.html">
+                                <a href="#" class="nav-link">
+                                    <i class="icon icon-target"></i> Fixed Header
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="tables.html" class="nav-link">
+                            <i class="icon icon-grid"></i> Tables
+                        </a>
+                    </li>
+
+                    <li class="nav-title">More</li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-umbrella"></i> Pages <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="../blank.html" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Blank Page
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="login.html" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Login
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="register.html" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Register
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="invoice.html" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Invoice
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="404.html" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> 404
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="500.html" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> 500
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="settings.html" class="nav-link">
+                                    <i class="icon icon-umbrella"></i> Settings
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <ul class="breadcrumb-item" id="breadcrumb">
+            </ul>
+            <div id="content">
+                <input type="text" id="text">
+                <button onclick="sendMessage()">send</button>
+                <div style="float: right;">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            Dismissible Alerts
+                        </div>
+
+                        <div class="card-body">
+                            <div class="alert alert-dismissible alert-primary">
+                                .alert .alert-dismissible .alert-primary
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+
+                            <div class="alert alert-dismissible alert-secondary">
+                                .alert .alert-dismissible .alert-secondary
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+
+                            <div class="alert alert-dismissible alert-danger">
+                                .alert .alert-dismissible .alert-danger
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+
+                            <div class="alert alert-dismissible alert-success">
+                                .alert .alert-dismissible .alert-success
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+
+                            <div class="alert alert-dismissible alert-warning">
+                                .alert .alert-dismissible .alert-warning
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+
+                            <div class="alert alert-dismissible alert-info">
+                                .alert .alert-dismissible .alert-info
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function () {
+        var message = $("#message");
+        message.bind('DOMNodeInserted', function (e) {
+           $('#bind_message').css("display","block");
+        });
+    });
+</script>
+</body>
+</html>

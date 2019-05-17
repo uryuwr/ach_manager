@@ -1,0 +1,312 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ela Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <style>
+        .form-control:focus {
+            outline: none;
+            border-color: #538fdc;
+            box-shadow: 0 0 5px rgba(83, 143, 220, 0.4);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<!-- Left Panel -->
+<aside id="left-panel" class="left-panel">
+</aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
+
+<!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="top-left">
+            <div class="navbar-header">
+                <a class="navbar-brand" href=""><img src="assets/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href=""><img src="assets/images/logo2.png" alt="Logo"></a>
+                <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
+        <div class="top-right">
+            <div class="header-menu">
+                <div class="header-left">
+                    <div class="form-inline">
+                        <form class="search-form">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search ..."
+                                   aria-label="Search">
+                            <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                        </form>
+                    </div>
+
+                    <div class="dropdown for-notification">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <span class="count bg-danger">3</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="notification">
+                            <p class="red">You have 3 Notification</p>
+                            <a class="dropdown-item media" href="#">
+                                <i class="fa fa-check"></i>
+                                <p>Server #1 overloaded.</p>
+                            </a>
+                            <a class="dropdown-item media" href="#">
+                                <i class="fa fa-info"></i>
+                                <p>Server #2 overloaded.</p>
+                            </a>
+                            <a class="dropdown-item media" href="#">
+                                <i class="fa fa-warning"></i>
+                                <p>Server #3 overloaded.</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="user-area dropdown float-right">
+                    <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
+                        <img class="user-avatar rounded-circle" src="assets/images/admin.jpg" alt="User Avatar">
+                    </a>
+
+                    <div class="user-menu dropdown-menu">
+                        <a class="nav-link" href="view/login.html"><i class="fa fa-power-off"></i>Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-inner">
+            <div class="row m-0">
+                <div class="col-sm-4">
+                    <div class="page-header float-left">
+                        <div class="page-title">
+                            <h1>成果上报</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                            <div class="col-lg-12">
+                                <!--成果类型-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label class="pull-right form-control-label">成果类型</label>
+                                    </div>
+                                    <div class="col col-md-8">
+                                    <div class="form-check-inline form-check">
+                                        <label for="inline-radio1" class="form-check-label ">
+                                            <input type="radio" id="inline-radio1" name="inline-radios"
+                                                   value="0" class="form-check-input ach_type">论文
+                                        </label>
+                                        <label for="inline-radio2" class="form-check-label ">
+                                            <input type="radio" id="inline-radio2" name="inline-radios"
+                                                   value="1" class="form-check-input ach_type">论著
+                                        </label>
+                                        <label for="inline-radio3" class="form-check-label ">
+                                            <input type="radio" id="inline-radio3" name="inline-radios"
+                                                   value="2" class="form-check-input ach_type">专利
+                                        </label>
+                                        <label for="inline-radio4" class="form-check-label ">
+                                            <input type="radio" id="inline-radio4" name="inline-radios"
+                                                   value="3" class="form-check-input ach_type">项目
+                                        </label>
+                                    </div>
+                                </div>
+                                </div>
+                                <!--标题-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label class="pull-right form-control-label">标题</label>
+                                    </div>
+                                    <div class="col-12 col-md-8"><input type="text" id="title" placeholder="标题不能为空" class="form-control">
+                                    </div>
+                                </div>
+                                <!--作者-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label class="pull-right form-control-label">作者</label>
+                                    </div>
+                                    <div class="col-12 col-md-8"><input type="text" id="author" placeholder="作者不能为空" class="form-control">
+                                    </div>
+                                </div>
+                                <!--简介-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label class="pull-right form-control-label">简介</label></div>
+                                    <div class="col-12 col-md-8"><textarea name="textarea-input" id="content" rows="9" placeholder="Content..." class="form-control"></textarea></div>
+                                </div>
+                                <!--领域类型-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label class="pull-right form-control-label">领域类型</label>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <select name="select" id="domain_type" class="form-control">
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--成果级别-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label class="pull-right form-control-label">成果级别</label>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <select name="select" id="level" class="form-control">
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--贡献度-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label class="pull-right form-control-label">贡献度</label>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <select name="select" id="proportion" class="form-control">
+                                            <option value="0.1">10%</option>
+                                            <option value="0.2">20%</option>
+                                            <option value="0.3">30%</option>
+                                            <option value="0.4">40%</option>
+                                            <option value="0.5">50%</option>
+                                            <option value="0.6">60%</option>
+                                            <option value="0.7">70%</option>
+                                            <option value="0.8">80%</option>
+                                            <option value="0.9">90%</option>
+                                            <option value="1.0">100%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--&lt;!&ndash;发表期刊 论文&ndash;&gt;-->
+                                <!--<div class="row form-group">-->
+                                    <!--<div class="col col-md-2"><label class="pull-right form-control-label">发表期刊</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-12 col-md-8"><input type="text"-->
+                                                                        <!--id="periodical"-->
+                                                                        <!--placeholder=""-->
+                                                                        <!--class="form-control">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash;出版社 论著&ndash;&gt;-->
+                                <!--<div class="row form-group">-->
+                                    <!--<div class="col col-md-2"><label class="pull-right form-control-label">出版社</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-12 col-md-8"><input type="text"-->
+                                                                        <!--id="press"-->
+                                                                        <!--placeholder=""-->
+                                                                        <!--class="form-control">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash;编号&ndash;&gt;-->
+                                <!--<div class="row form-group">-->
+                                    <!--<div class="col col-md-2"><label class="pull-right form-control-label">授权编号</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-12 col-md-8"><input type="text"-->
+                                                                        <!--id="auth_num"-->
+                                                                        <!--placeholder=""-->
+                                                                        <!--class="form-control">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash;项目鉴定单位 项目&ndash;&gt;-->
+                                <!--<div class="row form-group">-->
+                                    <!--<div class="col col-md-2"><label class="pull-right form-control-label">项目鉴定单位</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-12 col-md-8"><input type="text"-->
+                                                                        <!--id="auth_com"-->
+                                                                        <!--placeholder=""-->
+                                                                        <!--class="form-control">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--上传附件-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label for="file-multiple-input"
+                                                                     class="pull-right form-control-label">上传附件</label>
+                                    </div>
+                                    <div class="col-12 col-md-8"><input type="file" id="file-multiple-input"
+                                                                        name="file-multiple-input" multiple=""
+                                                                        class="form-control-file"></div>
+                                </div>
+                                <!--提交-->
+                                <div class="row form-group">
+                                    <div class="col col-md-2"><label class="pull-right form-control-label"></label>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <button type="button" class="btn btn-info" id="commit">提交</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div><!-- .animated -->
+    </div><!-- .content -->
+    <div class="clearfix"></div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="row">
+                <div class="col-sm-6">
+                    Copyright &copy; 2019 Ch Admin. More Info <a href="http://289561901@qq.com/" target="_blank"
+                                                                 title="电话">致电：1818181888</a> -
+                </div>
+                <div class="col-sm-6 text-right"> Designed by Colorlib
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
+
+<!-- Scripts -->
+<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.matchHeight.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/getUserInfo.js"></script>
+<script type="text/javascript" src="js/websocket.js"></script>
+<script src="js/ach_commit.js"></script>
+</body>
+</html>
